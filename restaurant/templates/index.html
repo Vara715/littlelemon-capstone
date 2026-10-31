@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Little Lemon</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="icon" href="{% static 'img/logo.svg' %}" type="image/svg+xml">
+</head>
+<body>
+  <header>
+    <img src="{% static 'img/logo.svg' %}" alt="Little Lemon logo" height="48">
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#reserve">Reserve</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Little Lemon</h1>
+    <h3>Chicago</h3>
+    <p>A family-owned Mediterranean restaurant focused on traditional recipes served with a modern twist.</p>
+  </div>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div id="menu-grid" class="menu-grid">Loading...</div>
+  </section>
+
+  <section id="reserve">
+    <h2>Log in</h2>
+    <form id="login-form">
+      <input id="username" placeholder="Username" required>
+      <input id="password" type="password" placeholder="Password" required>
+      <button type="submit">Log in</button>
+    </form>
+    <div id="login-msg" class="msg"></div>
+
+    <h2>Reserve a table</h2>
+    <form id="book-form">
+      <input id="name" placeholder="Your name" required>
+      <input id="guests" type="number" min="1" max="20" placeholder="Number of guests" required>
+      <input id="when" type="datetime-local" required>
+      <button type="submit">Book</button>
+    </form>
+    <div id="book-msg" class="msg"></div>
+
+    <h3>Bookings</h3>
+    <ul id="booking-list"></ul>
+  </section>
+
+  <footer><small>&copy; Little Lemon</small></footer>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
